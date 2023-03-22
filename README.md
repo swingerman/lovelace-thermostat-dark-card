@@ -138,14 +138,14 @@ A manintaned fork of [Lovelace Thermostat Dark Card](https://github.com/ciotlosm
       attribute: away
 ```
 
-[commits-shield]: https://img.shields.io/github/commit-activity/y/ciotlosm/lovelace-thermostat-dark-card.svg?style=for-the-badge
-[commits]: https://github.com/ciotlosm/lovelace-thermostat-dark-card/commits/master
+[commits-shield]: https://img.shields.io/github/commit-activity/y/swingerman/lovelace-thermostat-dark-card.svg?style=for-the-badge
+[commits]: https://github.com/swingerman/lovelace-thermostat-dark-card/commits/master
 [devcontainer]: https://code.visualstudio.com/docs/remote/containers
 [discord]: https://discord.gg/5e9yvq
 [discord-shield]: https://img.shields.io/discord/330944238910963714.svg?style=for-the-badge
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg?style=for-the-badge
 [forum]: https://community.home-assistant.io/c/projects/frontend
-[license-shield]: https://img.shields.io/github/license/ciotlosm/lovelace-thermostat-dark-card.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/swingerman/lovelace-thermostat-dark-card.svg?style=for-the-badge
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2022.svg?style=for-the-badge
-[releases-shield]: https://img.shields.io/github/release/ciotlosm/lovelace-thermostat-dark-card.svg?style=for-the-badge
-[releases]: https://github.com/ciotlosm/lovelace-thermostat-dark-card/releases
+[releases-shield]: https://img.shields.io/github/release/swingerman/lovelace-thermostat-dark-card.svg?style=for-the-badge
+[releases]: https://github.com/swingerman/lovelace-thermostat-dark-card/releases
