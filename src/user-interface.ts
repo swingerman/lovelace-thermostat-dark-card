@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/camelcase */
 import { LitElement, state } from 'lit-element';
 import { HomeAssistant, fireEvent } from 'custom-card-helpers';
-import { HVAC_HEATING, HVAC_COOLING, HVAC_IDLE, HVAC_OFF } from './const';
+import { HVAC_HEATING, HVAC_COOLING, HVAC_IDLE, HVAC_OFF, STATE_COOL, STATE_HEAT } from './const';
 import { ThermostatDarkCardConfig } from './types';
 import { SvgUtil } from './utils';
 import { ToggleButton } from './features/toggle-button/toggle-button';
@@ -188,6 +188,7 @@ export class ThermostatUserInterface extends LitElement {
       this._updateTemperatureSlot(tickLabel[1], 8, `temperature_slot_2`);
       switch (this._hvacState) {
         case HVAC_COOLING:
+        case STATE_COOL:
           // active ticks
           if (targetIndex < ambientIndex) {
             from = targetIndex;
@@ -195,6 +196,7 @@ export class ThermostatUserInterface extends LitElement {
           }
           break;
         case HVAC_HEATING:
+        case STATE_HEAT:
           // active ticks
           if (targetIndex > ambientIndex) {
             from = ambientIndex;
@@ -210,6 +212,7 @@ export class ThermostatUserInterface extends LitElement {
       this._updateTemperatureSlot(null, 0, `temperature_slot_3`);
       switch (this._hvacState) {
         case HVAC_COOLING:
+        case STATE_COOL:
           // active ticks
           if (highIndex < ambientIndex) {
             from = highIndex;
@@ -219,6 +222,7 @@ export class ThermostatUserInterface extends LitElement {
           }
           break;
         case HVAC_HEATING:
+        case STATE_HEAT:
           // active ticks
           if (lowIndex > ambientIndex) {
             from = ambientIndex;

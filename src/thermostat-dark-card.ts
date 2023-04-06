@@ -22,7 +22,7 @@ import { ThermostatUserInterface } from './user-interface';
 
 import type { ThermostatDarkCardConfig } from './types';
 
-import { HVAC_HEATING, HVAC_COOLING, HVAC_IDLE, HVAC_OFF, GREEN_LEAF_MODES,  } from './const';
+import { HVAC_HEATING, HVAC_COOLING, HVAC_IDLE, HVAC_OFF, GREEN_LEAF_MODES, STATE_HEAT, STATE_COOL} from './const';
 
 import { localize } from './localize/localize';
 import { cardColors, cardStyles } from './styles';
@@ -64,7 +64,7 @@ export class ThermostatDarkCard extends ThermostatUserInterface {
       else hvacState = hass.states[config.hvac.sensor.sensor].state;
     } else hvacState = entity.attributes['hvac_action'] || entity.state;
 
-    if (![HVAC_OFF, HVAC_IDLE, HVAC_HEATING, HVAC_COOLING].includes(hvacState)) {
+    if (![HVAC_OFF, HVAC_IDLE, HVAC_HEATING, HVAC_COOLING, STATE_COOL, STATE_HEAT].includes(hvacState)) {
       hvacState = config.hvac.states[hvacState] || HVAC_IDLE
     }
 
@@ -137,7 +137,10 @@ export class ThermostatDarkCard extends ThermostatUserInterface {
         off: HVAC_OFF,
         idle: HVAC_IDLE,
         heating: HVAC_HEATING,
-        cooling: HVAC_COOLING
+        cooling: HVAC_COOLING,
+        // some climate component desn't properly use hvac_action, only state
+        heat: STATE_HEAT,
+        cool: STATE_COOL
       };
     if (!cardConfig.use_theme_color) cardConfig.use_theme_color = false;
 
